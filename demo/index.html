@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garden Bed Setup Builder Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="promo-bar">
+        <button aria-label="Previous announcement">‹</button>
+        <span>4th of July Sale: Up to 40% Off</span>
+        <button aria-label="Next announcement">›</button>
+      </div>
+      <nav class="utility-nav" aria-label="Utility navigation">
+        <div class="utility-links">
+          <span>About Us</span>
+          <span>Academy</span>
+          <span>Programs</span>
+        </div>
+        <img class="brand-logo" src="./assets/vego-logo.png" alt="Vego Garden" />
+        <div class="nav-actions">
+          <span>⌕</span>
+          <span>◎</span>
+          <span>♙</span>
+          <span>Cart</span>
+        </div>
+      </nav>
+      <nav class="vego-nav" aria-label="Main navigation">
+        <span class="sale-link">4th of July Sale⌄</span>
+        <span>Raised Garden Beds⌄</span>
+        <span>Elevated Garden Beds⌄</span>
+        <span>Planters⌄</span>
+        <span>Add-Ons⌄</span>
+        <span>Watering⌄</span>
+        <span>Greenhouses⌄</span>
+        <span>Garden Supplies⌄</span>
+      </nav>
+    </header>
+    <main class="page-shell">
+      <div class="breadcrumbs">
+        <span>Home</span>
+        <span>/</span>
+        <span>Raised Garden Beds</span>
+        <span>/</span>
+        <span>Classic Garden Beds</span>
+        <span>/</span>
+        <span>17" Tall Garden Beds</span>
+      </div>
+      <section class="pdp">
+        <div class="product-media" aria-label="Garden bed product preview">
+          <div class="thumb-column" aria-hidden="true">
+            <span class="side-thumb active"><img src="./assets/vego-pdp-main.jpg" alt="" /></span>
+            <span class="side-thumb"><img src="./assets/vego-bed-main.png" alt="" /></span>
+            <span class="side-thumb"><img src="./assets/vego-bed-thumb-1.png" alt="" /></span>
+            <span class="side-thumb"><img src="./assets/vego-bed-thumb-2.png" alt="" /></span>
+          </div>
+          <div class="media-stage">
+            <span class="best-seller">BEST SELLER</span>
+            <button class="gallery-arrow left" aria-label="Previous image">‹</button>
+            <img class="product-main-image" src="./assets/vego-pdp-main.jpg" alt="Vego Garden 17 inch tall 9 in 1 modular raised garden bed in olive green" />
+            <button class="gallery-arrow right" aria-label="Next image">›</button>
+            <span class="image-note">Image shows planted example. Soil and plants sold separately.</span>
+          </div>
+        </div>
+
+        <section class="buy-box" aria-labelledby="product-title">
+          <div class="rating-row product-rating">
+            <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+            <b>4.9</b>
+            <a>6325 Reviews</a>
+          </div>
+          <h1 id="product-title">17" Tall 9 In 1 Large Modular Metal Raised Garden Bed Kit</h1>
+          <div class="price-row">
+            <span class="price">$145.31</span>
+            <span class="compare-price">$259.95</span>
+            <span class="discount">44% OFF</span>
+          </div>
+          <div class="option-block">
+            <div class="option-title">
+              <strong>Color: Olive Green</strong>
+              <span>6 colors available</span>
+            </div>
+          </div>
+          <div class="variant-row" aria-label="Color options">
+            <button class="swatch swatch-sage active" aria-label="Olive Green selected"></button>
+            <button class="swatch swatch-gray" aria-label="Modern Gray"></button>
+            <button class="swatch swatch-white" aria-label="Pearl White"></button>
+            <button class="swatch swatch-terracotta" aria-label="Terra Cotta"></button>
+            <button class="swatch swatch-blue" aria-label="Sky Blue"></button>
+          </div>
+          <div class="option-block">
+            <div class="option-title">
+              <strong>Height:</strong>
+            </div>
+            <div class="config-strip">
+              <button class="config-choice active">▰ 17" Tall</button>
+              <button class="config-choice">▰ 26" Tall</button>
+              <button class="config-choice">▰ 32" Tall</button>
+            </div>
+          </div>
+          <div class="ship-status"><strong>Shipping Status:</strong> In Stock</div>
+          <div class="ship-line">▰ Fast Shipping arrives on</div>
+          <div class="cart-row">
+            <div class="qty-stepper" aria-label="Quantity">
+              <button>-</button><span>1</span><button>+</button>
+            </div>
+            <button class="primary-action" id="addGardenBed">Add to Cart</button>
+          </div>
+          <p class="pay-note">Pay in 4 interest-free installments of $36.33 with <strong>shop</strong><span>Pay</span> · Learn more</p>
+          <button class="setup-teaser" id="jumpToBuilder">
+            <span>
+              <strong>Soil needed to match the product photo</strong>
+              <small>This bed ships as a frame kit. We can add the matched fill next.</small>
+            </span>
+            <span class="teaser-price">+$90</span>
+          </button>
+          <div class="product-copy">
+            <p>Build a dream garden that will last you 20 years. Vego Garden's 9-in-1 Metal Raised Bed Kit is designed for optimal plant growth and maximum flexibility in any outdoor space.</p>
+            <ul>
+              <li>Reduces knee and back strain for more comfortable gardening.</li>
+              <li>Rust-resistant VZ 2.0 steel lasts 20+ years.</li>
+              <li>9 different layouts to fit your space perfectly.</li>
+              <li>Complete your dream garden with compatible add-ons.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="builder compact-story" aria-labelledby="builder-title">
+        <div class="builder-copy">
+          <p class="eyebrow">Lightweight flow</p>
+          <h2 id="builder-title">提醒不放在最后，也不打断主购买</h2>
+          <p>
+            PDP 只做轻提示；用户点击加入购物车后，cart drawer 立刻提醒 soil starter kit。
+            这比重配置器更轻，也更贴近“买了框子后还差土”的真实转化点。
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-card">
+            <span>1</span>
+            <strong>PDP 轻提示</strong>
+            <p>主图让用户看到种植效果，但提醒 soil 和植物不随床体一起发货。</p>
+          </article>
+          <article class="journey-card strong">
+            <span>2</span>
+            <strong>加购后强提醒</strong>
+            <p>用户已决定买 bed kit，此时推荐 6 包 / 360L starter kit。</p>
+          </article>
+          <article class="journey-card">
+            <span>3</span>
+            <strong>购物车兜底</strong>
+            <p>若用户跳过 soil，再以“未添加填充物”做最后提醒。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Cart drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <h2 id="cartTitle">Your Cart (1)</h2>
+        <button class="icon-button" id="closeDrawer" aria-label="Close cart drawer">×</button>
+      </div>
+
+      <div class="cart-offer">Limited-Time Offer: <u>Prime Day Prices, No Membership Required.</u></div>
+
+      <div class="cart-layout">
+        <div class="cart-main">
+          <div class="drawer-item">
+            <div class="mini-bed" aria-hidden="true">
+              <img src="./assets/vego-pdp-main.jpg" alt="" />
+            </div>
+            <div class="drawer-item-copy">
+              <strong>17" Tall 9 In 1 Large Modular Metal Raised Garden Bed Kit</strong>
+              <small><b>Color:</b> Olive Green</small>
+              <div class="mini-qty" aria-label="Quantity">
+                <button>-</button><span>1</span><button>+</button>
+              </div>
+              <p>In Stock</p>
+              <p>4th of July Sale Saving: $114.64</p>
+            </div>
+            <div class="cart-price">
+              <del>$259.95</del>
+              <b>$145.31</b>
+            </div>
+          </div>
+
+          <section class="soil-reco" id="soilReco">
+            <div class="soil-card-head">
+              <div>
+                <p class="reco-kicker">Recommended add-on</p>
+                <h3>Add matched soil?</h3>
+                <small id="soilSubtitle">Calculated for this bed size</small>
+              </div>
+              <strong class="soil-head-price">$90</strong>
+              <label class="switch" aria-label="Include soil starter kit">
+                <input type="checkbox" id="soilToggle" checked />
+                <span></span>
+              </label>
+            </div>
+
+            <div class="soil-card-body">
+              <div class="calc-line">
+                <span>Calculated for this bed</span>
+                <strong>350L</strong>
+              </div>
+              <div class="mix-label">
+                <span>50/50 mix</span>
+                <span>compost + substrate</span>
+              </div>
+              <div class="mix-bar" aria-label="50 percent compost and 50 percent substrate">
+                <span>Compost 175L</span>
+                <span>Substrate 175L</span>
+              </div>
+
+              <div class="package-grid">
+                <div class="package-row">
+                  <span class="bag-icon compost"></span>
+                  <div>
+                    <strong>3 × compost 60L</strong>
+                    <small>180L packed volume</small>
+                  </div>
+                </div>
+                <div class="package-row">
+                  <span class="bag-icon substrate"></span>
+                  <div>
+                    <strong>3 × substrate 60L</strong>
+                    <small>180L packed volume</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="buffer-note">
+                <span>+10L buffer</span>
+                <small>Minimum package size gives a little extra fill</small>
+              </div>
+
+              <div class="soil-kit">
+                <div>
+                  <strong>Soil Starter Kit</strong>
+                  <small>6 bags / 360L total</small>
+                </div>
+                <span>$90</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="soil-added" id="soilAdded" hidden>
+            <div>
+              <strong>Soil Starter Kit added</strong>
+              <p>6 matched fill bags added to cart.</p>
+            </div>
+            <button class="remove-button" id="removeSoilKit">Remove</button>
+          </section>
+
+          <section class="soil-skipped" id="soilSkipped" hidden>
+            <div>
+              <strong>Soil recommendation hidden</strong>
+              <p>You can continue with the bed kit only.</p>
+            </div>
+            <button class="remove-button" id="showSoilReco">Show again</button>
+          </section>
+
+          <div class="cart-summary-lines">
+            <div class="cart-line">
+              <span>Subtotal:</span>
+              <strong id="drawerSubtotal">$235.31</strong>
+            </div>
+            <div class="cart-line">
+              <span>Shipping:</span>
+              <strong>Free</strong>
+            </div>
+            <div class="discount-row">
+              <span>Discount Code</span>
+              <button>Apply</button>
+            </div>
+            <button class="notes-button">Add Order Notes +</button>
+          </div>
+
+          <div class="drawer-spacer"></div>
+
+          <div class="drawer-bottom">
+            <div>
+              <strong>EST. TOTAL</strong>
+              <span id="drawerTotal">$235.31</span>
+            </div>
+            <p id="savingText">Saving $114.64</p>
+            <button class="checkout-button" id="checkoutButton">Check Out</button>
+          </div>
+        </div>
+
+        <aside class="cart-recs" aria-label="Recommended products">
+          <div class="cart-recs-header">
+            <h3>You May Also Like</h3>
+            <button>Change ↻</button>
+          </div>
+          <article class="rec-card">
+            <img src="./assets/vego-pdp-main.jpg" alt="" />
+            <div>
+              <strong>Vego Irrigation Kit</strong>
+              <p><b>Size</b> <span>Small⌄</span></p>
+              <p>In Stock</p>
+              <button><span>$89.95</span><b>Add</b></button>
+            </div>
+          </article>
+          <article class="rec-card">
+            <img src="./assets/vego-bed-thumb-1.png" alt="" />
+            <div>
+              <strong>Clamp Set for Irrigation Kit</strong>
+              <p>In Stock (Ships in 2 weeks)</p>
+              <button><span>$19.95</span><b>Add</b></button>
+            </div>
+          </article>
+          <article class="rec-card">
+            <img src="./assets/vego-bed-thumb-2.png" alt="" />
+            <div>
+              <strong>Mesh Cover System</strong>
+              <p><b>Bed Configuration</b> <span>3.5'W x 3.5'L⌄</span></p>
+              <p>In Stock</p>
+              <button><span>$84.95</span><b>Add</b></button>
+            </div>
+          </article>
+          <div class="cart-trust-row">
+            <span>Free Shipping<br />Over $99</span>
+            <span>Carbon<br />Neutral</span>
+            <span>Loyalty<br />Program</span>
+            <span>100-Day<br />Return Policy</span>
+          </div>
+        </aside>
+      </div>
+    </aside>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
