@@ -81,7 +81,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--white);
+  background: #fef9eb;
   box-shadow: 0 2px 18px rgba(31, 45, 35, 0.08);
 }
 
@@ -1996,7 +1996,6 @@ h2 {
   width: min(1328px, calc(100vw - 48px));
   min-height: 86px;
   margin: 0 auto;
-  background: #fef9eb;
 }
 
 .utility-links,
