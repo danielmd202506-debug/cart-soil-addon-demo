@@ -115,18 +115,23 @@
           </div>
           <p class="pay-note">Pay in 4 interest-free installments of $36.33 with <strong>shop</strong><span>Pay</span> · Learn more</p>
           <section class="addon-recommendation is-cold" id="addonRecommendation">
-            <button class="addon-summary" id="addonSummary" aria-expanded="true">
+            <div class="addon-summary" id="addonSummary">
               <span>
-                <strong>Complete your setup</strong>
-                <small id="addonSummaryText">Choose a starter bundle before adding to cart.</small>
+                <strong>Add setup bundle?</strong>
+                <small id="addonSummaryText">Turn on to compare starter setup combinations.</small>
               </span>
               <b id="addonSummaryPrice">From $145.31</b>
-            </button>
+              <label class="setup-switch" aria-label="Show setup bundle options">
+                <input type="checkbox" id="setupToggle" />
+                <span></span>
+              </label>
+            </div>
             <div class="bundle-panel" id="bundlePanel">
               <button class="bundle-option" data-bundle="bed" data-soil="false">
                 <span>
                   <strong>Bed only</strong>
                   <small>Frame kit only. Soil and accessories can be added later.</small>
+                  <em>Bed frame</em>
                 </span>
                 <b>$145.31</b>
               </button>
@@ -134,6 +139,7 @@
                 <span>
                   <strong>Bed + Soil Starter</strong>
                   <small>Matched 350L soil plan for this selected bed.</small>
+                  <em>Bed frame · Compost 3 bags · Substrate 3 bags</em>
                 </span>
                 <b>$235.31</b>
               </button>
@@ -141,6 +147,7 @@
                 <span>
                   <strong>Complete Starter Kit</strong>
                   <small>Bed, soil starter, and irrigation-ready setup.</small>
+                  <em>Bed frame · Soil starter · Irrigation kit</em>
                 </span>
                 <b>$325.26</b>
               </button>

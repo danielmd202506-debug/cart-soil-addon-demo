@@ -23,6 +23,7 @@ const addonRecommendation = document.querySelector("#addonRecommendation");
 const addonSummary = document.querySelector("#addonSummary");
 const addonSummaryText = document.querySelector("#addonSummaryText");
 const addonSummaryPrice = document.querySelector("#addonSummaryPrice");
+const setupToggle = document.querySelector("#setupToggle");
 const bundlePanel = document.querySelector("#bundlePanel");
 const bundleOptions = Array.from(document.querySelectorAll(".bundle-option"));
 
@@ -32,6 +33,7 @@ let selectedColor = "Olive Green";
 let selectedHeight = "17";
 let currentScenario = "cold";
 let selectedBundle = "soil";
+let setupEnabled = false;
 
 function isOutOfStock(color, height) {
   return color === "Olive Green" && height === "32";
@@ -90,11 +92,29 @@ function setBundle(bundle) {
   const price = option?.querySelector("b")?.textContent ?? "$145.31";
   const includesSoil = option?.dataset.soil === "true";
 
-  addonSummaryPrice.textContent = price;
-  addonSummaryText.textContent =
-    currentScenario === "warm"
-      ? "Open when you want to compare setup add-ons."
-      : `${label} selected. ${includesSoil ? "Soil will be included in cart." : "No add-on selected."}`;
+  addonSummaryPrice.textContent = setupEnabled ? price : "Optional";
+  if (!setupEnabled) {
+    addonSummaryText.textContent =
+      currentScenario === "warm"
+        ? "Keep it off if you already know what you need."
+        : "Turn on to compare starter setup combinations.";
+  } else {
+    addonSummaryText.textContent = `${label} selected. ${
+      includesSoil ? "Soil will be included in cart." : "No setup add-on selected."
+    }`;
+  }
+}
+
+function setSetupEnabled(enabled) {
+  setupEnabled = enabled;
+  setupToggle.checked = setupEnabled;
+  addonRecommendation.classList.toggle("is-expanded", setupEnabled);
+  bundlePanel.hidden = !setupEnabled;
+  if (setupEnabled && currentScenario === "cold" && selectedBundle === "bed") {
+    setBundle("soil");
+  } else {
+    setBundle(selectedBundle);
+  }
 }
 
 function applyScenario(scenario) {
@@ -107,20 +127,16 @@ function applyScenario(scenario) {
   addonRecommendation.classList.add(`is-${currentScenario}`);
 
   if (currentScenario === "cold") {
-    setBundle("soil");
-    addonRecommendation.classList.add("is-expanded");
-    bundlePanel.hidden = false;
-    addonSummary.setAttribute("aria-expanded", "true");
+    selectedBundle = "soil";
+    setSetupEnabled(false);
     closeCartDrawer();
   } else if (currentScenario === "warm") {
-    setBundle("bed");
-    bundlePanel.hidden = true;
-    addonSummary.setAttribute("aria-expanded", "false");
+    selectedBundle = "bed";
+    setSetupEnabled(false);
     closeCartDrawer();
   } else {
     setBundle("soil");
-    bundlePanel.hidden = true;
-    addonSummary.setAttribute("aria-expanded", "false");
+    setSetupEnabled(false);
     soilToggle.checked = true;
     skippedSoil = false;
     openDrawer();
@@ -154,27 +170,24 @@ function updateDrawer() {
 addGardenBed.addEventListener("click", () => {
   if (addGardenBed.disabled) return;
   const option = getBundleOption(selectedBundle);
-  soilToggle.checked = currentScenario === "cart" || option?.dataset.soil === "true";
+  soilToggle.checked = currentScenario === "cart" || (setupEnabled && option?.dataset.soil === "true");
   skippedSoil = false;
   openDrawer();
   updateDrawer();
 });
 
-addonSummary.addEventListener("click", () => {
+setupToggle.addEventListener("change", () => {
+  setSetupEnabled(setupToggle.checked);
+});
+
+addonSummary.addEventListener("click", (event) => {
+  if (event.target.closest(".setup-switch")) return;
   if (currentScenario === "cart") {
     openDrawer();
     updateDrawer();
     return;
   }
-
-  const isExpanded = addonRecommendation.classList.toggle("is-expanded");
-  bundlePanel.hidden = !isExpanded;
-  addonSummary.setAttribute("aria-expanded", String(isExpanded));
-  if (currentScenario === "warm" && isExpanded) {
-    addonSummaryText.textContent = "Choose only if you want to complete the setup now.";
-  } else {
-    setBundle(selectedBundle);
-  }
+  setSetupEnabled(!setupEnabled);
 });
 
 soilToggle.addEventListener("change", () => {

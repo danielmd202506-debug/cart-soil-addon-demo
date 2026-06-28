@@ -475,7 +475,7 @@ h2 {
 
 .addon-summary {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   gap: 18px;
   align-items: center;
   width: 100%;
@@ -485,6 +485,7 @@ h2 {
   color: #315733;
   background: #eef6e8;
   text-align: left;
+  cursor: pointer;
 }
 
 .addon-recommendation.is-warm .addon-summary {
@@ -512,6 +513,49 @@ h2 {
 
 .addon-summary b {
   font-size: 19px;
+}
+
+.setup-switch {
+  position: relative;
+  display: inline-flex;
+  width: 50px;
+  height: 30px;
+}
+
+.setup-switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.setup-switch span {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #315733;
+  border-radius: 999px;
+  background: #fffef4;
+  pointer-events: none;
+  transition: background 180ms ease;
+}
+
+.setup-switch span::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #315733;
+  transition: transform 180ms ease;
+}
+
+.setup-switch input:checked + span {
+  border-color: #315733;
+  background: #cbe6bc;
+}
+
+.setup-switch input:checked + span::before {
+  transform: translateX(20px);
 }
 
 .bundle-panel {
@@ -557,26 +601,23 @@ h2 {
   line-height: 1.35;
 }
 
+.bundle-option em {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 9px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #315733;
+  background: #eef1d5;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.25;
+}
+
 .bundle-option b {
   color: #315733;
   font-size: 18px;
-}
-
-.addon-recommendation.is-warm:not(.is-expanded) .addon-summary {
-  grid-template-columns: 1fr auto auto;
-}
-
-.addon-recommendation.is-warm:not(.is-expanded) .addon-summary::after {
-  content: "+";
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  color: #fef9eb;
-  background: #315733;
-  font-size: 20px;
-  font-weight: 800;
 }
 
 .setup-teaser {
