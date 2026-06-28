@@ -48,6 +48,11 @@
         <span>/</span>
         <span>17" Tall Garden Beds</span>
       </div>
+      <div class="scenario-switcher" aria-label="Addon recommendation scenario">
+        <button class="active" data-scenario="cold">Cold user · Bundle</button>
+        <button data-scenario="warm">Warm user · Collapsed</button>
+        <button data-scenario="cart">Cart · Soil reminder</button>
+      </div>
       <section class="pdp">
         <div class="product-media" aria-label="Garden bed product preview">
           <div class="thumb-column" aria-hidden="true">
@@ -79,28 +84,28 @@
           </div>
           <div class="option-block">
             <div class="option-title">
-              <strong>Color: Olive Green</strong>
+              <strong id="selectedColorLabel">Color: Olive Green</strong>
               <span>6 colors available</span>
             </div>
           </div>
           <div class="variant-row" aria-label="Color options">
-            <button class="swatch swatch-sage active" aria-label="Olive Green selected"></button>
-            <button class="swatch swatch-gray" aria-label="Modern Gray"></button>
-            <button class="swatch swatch-white" aria-label="Pearl White"></button>
-            <button class="swatch swatch-terracotta" aria-label="Terra Cotta"></button>
-            <button class="swatch swatch-blue" aria-label="Sky Blue"></button>
+            <button class="swatch swatch-sage active" data-color="Olive Green" aria-label="Olive Green selected"></button>
+            <button class="swatch swatch-gray" data-color="Modern Gray" aria-label="Modern Gray"></button>
+            <button class="swatch swatch-white" data-color="Pearl White" aria-label="Pearl White"></button>
+            <button class="swatch swatch-terracotta" data-color="Terra Cotta" aria-label="Terra Cotta"></button>
+            <button class="swatch swatch-blue" data-color="Sky Blue" aria-label="Sky Blue"></button>
           </div>
           <div class="option-block">
             <div class="option-title">
-              <strong>Height:</strong>
+              <strong id="selectedHeightLabel">Height: 17" Tall</strong>
             </div>
             <div class="config-strip">
-              <button class="config-choice active">▰ 17" Tall</button>
-              <button class="config-choice">▰ 26" Tall</button>
-              <button class="config-choice">▰ 32" Tall</button>
+              <button class="config-choice active" data-height="17">▰ 17" Tall</button>
+              <button class="config-choice" data-height="26">▰ 26" Tall</button>
+              <button class="config-choice" data-height="32">▰ 32" Tall</button>
             </div>
           </div>
-          <div class="ship-status"><strong>Shipping Status:</strong> In Stock</div>
+          <div class="ship-status" id="shipStatus"><strong>Shipping Status:</strong> In Stock</div>
           <div class="ship-line">▰ Fast Shipping arrives on</div>
           <div class="cart-row">
             <div class="qty-stepper" aria-label="Quantity">
@@ -109,13 +114,38 @@
             <button class="primary-action" id="addGardenBed">Add to Cart</button>
           </div>
           <p class="pay-note">Pay in 4 interest-free installments of $36.33 with <strong>shop</strong><span>Pay</span> · Learn more</p>
-          <button class="setup-teaser" id="jumpToBuilder">
-            <span>
-              <strong>Soil needed to match the product photo</strong>
-              <small>This bed ships as a frame kit. We can add the matched fill next.</small>
-            </span>
-            <span class="teaser-price">+$90</span>
-          </button>
+          <section class="addon-recommendation is-cold" id="addonRecommendation">
+            <button class="addon-summary" id="addonSummary" aria-expanded="true">
+              <span>
+                <strong>Complete your setup</strong>
+                <small id="addonSummaryText">Choose a starter bundle before adding to cart.</small>
+              </span>
+              <b id="addonSummaryPrice">From $145.31</b>
+            </button>
+            <div class="bundle-panel" id="bundlePanel">
+              <button class="bundle-option" data-bundle="bed" data-soil="false">
+                <span>
+                  <strong>Bed only</strong>
+                  <small>Frame kit only. Soil and accessories can be added later.</small>
+                </span>
+                <b>$145.31</b>
+              </button>
+              <button class="bundle-option active" data-bundle="soil" data-soil="true">
+                <span>
+                  <strong>Bed + Soil Starter</strong>
+                  <small>Matched 350L soil plan for this selected bed.</small>
+                </span>
+                <b>$235.31</b>
+              </button>
+              <button class="bundle-option" data-bundle="complete" data-soil="true">
+                <span>
+                  <strong>Complete Starter Kit</strong>
+                  <small>Bed, soil starter, and irrigation-ready setup.</small>
+                </span>
+                <b>$325.26</b>
+              </button>
+            </div>
+          </section>
           <div class="product-copy">
             <p>Build a dream garden that will last you 20 years. Vego Garden's 9-in-1 Metal Raised Bed Kit is designed for optimal plant growth and maximum flexibility in any outdoor space.</p>
             <ul>
