@@ -1017,7 +1017,8 @@ h2 {
   top: 0;
   right: 0;
   z-index: 21;
-  width: min(720px, 46vw);
+  width: max-content;
+  max-width: calc(100vw - 56px);
   height: 100vh;
   padding: 0;
   overflow: hidden;
@@ -1078,7 +1079,7 @@ h2 {
 
 .cart-layout {
   display: grid;
-  grid-template-columns: minmax(330px, 1fr) minmax(250px, 0.74fr);
+  grid-template-columns: 380px 320px;
   height: calc(100vh - 112px);
 }
 
@@ -1089,12 +1090,12 @@ h2 {
 
 .cart-main {
   position: relative;
-  padding: 16px 18px 0;
+  padding: 16px 20px 0;
   border-right: 1px solid #315733;
 }
 
 .cart-recs {
-  padding: 18px;
+  padding: 18px 20px;
 }
 
 .drawer-item {
@@ -1516,8 +1517,8 @@ h2 {
   position: sticky;
   bottom: 0;
   z-index: 2;
-  margin: 0 -18px;
-  padding: 16px 18px 18px;
+  margin: 0 -20px;
+  padding: 16px 20px 18px;
   background: #c0d184;
 }
 
@@ -1642,8 +1643,8 @@ h2 {
 
 .rec-card {
   display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 12px;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
   align-items: center;
   margin-bottom: 14px;
   padding: 14px;
@@ -1653,8 +1654,8 @@ h2 {
 }
 
 .rec-card img {
-  width: 80px;
-  height: 76px;
+  width: 88px;
+  height: 80px;
   object-fit: contain;
 }
 
@@ -1662,7 +1663,7 @@ h2 {
   display: block;
   color: #315733;
   font-family: var(--vego-serif);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -1687,11 +1688,11 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
   width: 100%;
   min-height: 42px;
   margin-top: 14px;
-  padding: 0 10px;
+  padding: 0 12px;
   border: 0;
   border-radius: 9px;
   color: #315733;
@@ -1699,7 +1700,7 @@ h2 {
 }
 
 .rec-card button span {
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .rec-card button b {
