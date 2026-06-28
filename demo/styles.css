@@ -2223,6 +2223,9 @@ h2 {
 }
 
 .product-media {
+  position: sticky;
+  top: 190px;
+  align-self: start;
   display: grid;
   grid-template-columns: 76px 1fr;
   gap: 18px;
@@ -2474,6 +2477,10 @@ h1 {
   .pdp,
   .product-media {
     grid-template-columns: 1fr;
+  }
+
+  .product-media {
+    position: static;
   }
 
   .thumb-column {
